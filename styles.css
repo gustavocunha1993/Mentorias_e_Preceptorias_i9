@@ -1,0 +1,398 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+.header {
+    padding: 1.5rem;
+    background: linear-gradient(45deg, #5835e0, #6942fd);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-logo, .right-logo {
+    flex: 0 0 120px; /* Largura fixa para logos */
+    display: flex;
+    align-items: center;
+}
+
+.left-logo {
+    justify-content: flex-start;
+}
+
+.right-logo {
+    justify-content: flex-end;
+}
+
+.header-title {
+    flex: 1; /* Usa todo o espaço restante */
+    text-align: center;
+    padding: 0 20px;
+}
+
+.logo, .logo-gc {
+    max-height: 100px; /* Logos maiores */
+    width: auto;
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsividade para o header */
+@media (max-width: 900px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .left-logo, .right-logo {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .header-title {
+        order: -1; /* Coloca o título acima das logos em telas menores */
+        margin-bottom: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo, .logo-gc {
+        max-height: 70px;
+    }
+    
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Seção Mentor Chefe */
+.mentor-chief-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.mentor-chief-section h2 {
+    font-size: 2rem;
+    color: #6942fd;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.mentor-chief-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #6942fd;
+}
+
+.mentor-chief {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mentor-chief .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 3px solid #6942fd;
+    object-position: center 20%; /* Ajuste para melhor enquadramento */
+}
+
+.mentor-chief h3 {
+    font-size: 1.5rem;
+    color: #6942fd;
+    margin-bottom: 1rem;
+}
+
+.mentor-chief p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Seção Preceptores */
+.preceptors-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.preceptors-section h2 {
+    font-size: 2rem;
+    color: #6942fd;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.preceptors-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #6942fd;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preceptors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.preceptor {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preceptor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste padrão para todas as imagens de perfil */
+.profile-img {
+    object-position: center 20%; /* Ajuste padrão para todas as fotos */
+}
+
+.preceptor .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 3px solid #6942fd;
+}
+
+/* Ajuste específico para a foto do Filipe */
+.filipe-special .profile-img {
+    object-position: center 15%; /* Ajuste específico para o rosto do Filipe */
+}
+
+.preceptor h3 {
+    font-size: 1.2rem;
+    color: #6942fd;
+    margin-bottom: 0.5rem;
+}
+
+.preceptor p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Botões de Agendamento */
+.schedule-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #6942fd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.schedule-btn:hover {
+    background: #5835e0;
+}
+
+/* Seção de Contato */
+.contact-section {
+    background-color: #f0f0f0;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #6942fd;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid #6942fd;
+    object-position: center 20%; /* Ajuste para melhor enquadramento */
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.contact-info a {
+    color: #6942fd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .logo-gc {
+        max-height: 40px;
+        left: 50%;
+        top: -50px;
+        transform: translateX(-50%);
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .mentor-chief-section h2,
+    .preceptors-section h2,
+    .contact-section h2 {
+        font-size: 1.7rem;
+    }
+    
+    .mentor-chief {
+        padding: 1.5rem;
+    }
+    
+    .preceptors {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    
+    .preceptor {
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        max-width: 150px;
+    }
+    
+    .logo-gc {
+        max-height: 35px;
+    }
+    
+    .mentor-chief .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .mentor-chief h3 {
+        font-size: 1.3rem;
+    }
+    
+    .preceptor {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .preceptor .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .schedule-btn {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Ajustes para telas médias */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .preceptors {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas médias */
+    }
+}
