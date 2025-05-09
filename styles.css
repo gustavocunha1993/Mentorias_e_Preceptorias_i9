@@ -26,10 +26,11 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 0;
 }
 
 .left-logo, .right-logo {
-    flex: 0 0 120px; /* Largura fixa para logos */
+    flex: 0 0 120px;
     display: flex;
     align-items: center;
 }
@@ -43,13 +44,13 @@ body {
 }
 
 .header-title {
-    flex: 1; /* Usa todo o espaço restante */
+    flex: 1;
     text-align: center;
     padding: 0 20px;
 }
 
 .logo, .logo-gc {
-    max-height: 100px; /* Logos maiores */
+    max-height: 100px;
     width: auto;
 }
 
@@ -58,39 +59,6 @@ body {
     font-weight: 600;
     line-height: 1.4;
     margin: 0;
-}
-
-/* Responsividade para o header */
-@media (max-width: 900px) {
-    .logo-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .left-logo, .right-logo {
-        flex: 0 0 auto;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .header-title {
-        order: -1; /* Coloca o título acima das logos em telas menores */
-        margin-bottom: 15px;
-    }
-    
-    .header h1 {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo, .logo-gc {
-        max-height: 70px;
-    }
-    
-    .header h1 {
-        font-size: 1.2rem;
-    }
 }
 
 /* Main Content */
@@ -141,7 +109,7 @@ body {
     object-fit: cover;
     margin: 0 auto 1.5rem;
     border: 3px solid #6942fd;
-    object-position: center 20%; /* Ajuste para melhor enquadramento */
+    object-position: center 20%;
 }
 
 .mentor-chief h3 {
@@ -211,7 +179,7 @@ body {
 
 /* Ajuste padrão para todas as imagens de perfil */
 .profile-img {
-    object-position: center 20%; /* Ajuste padrão para todas as fotos */
+    object-position: center 20%;
 }
 
 .preceptor .profile-img {
@@ -225,7 +193,7 @@ body {
 
 /* Ajuste específico para a foto do Filipe */
 .filipe-special .profile-img {
-    object-position: center 15%; /* Ajuste específico para o rosto do Filipe */
+    object-position: center 80%;
 }
 
 .preceptor h3 {
@@ -283,7 +251,7 @@ body {
     object-fit: cover;
     margin-bottom: 1.5rem;
     border: 3px solid #6942fd;
-    object-position: center 20%; /* Ajuste para melhor enquadramento */
+    object-position: center 20%;
 }
 
 .contact-info p {
@@ -312,36 +280,73 @@ body {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.3rem;
+@media (max-width: 900px) {
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
     }
-    
-    .logo-gc {
-        max-height: 40px;
-        left: 50%;
-        top: -50px;
-        transform: translateX(-50%);
+
+    .left-logo, .right-logo {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
     }
-    
+
+    .header-title {
+        font-size: 1.1rem;
+        padding: 0 8px;
+    }
+
+    .logo, .logo-gc {
+        max-height: 70px;
+        height: 70px;
+        width: auto;
+    }
+
     .main-content {
         padding: 1.5rem;
     }
-    
+
     .mentor-chief-section h2,
     .preceptors-section h2,
     .contact-section h2 {
         font-size: 1.7rem;
     }
-    
+
     .mentor-chief {
         padding: 1.5rem;
     }
-    
+
     .preceptors {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: repeat(2, 1fr);
     }
-    
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .header-title {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+
+    .logo, .logo-gc {
+        max-height: 60px;
+        height: 60px;
+    }
+
+    .preceptors {
+        grid-template-columns: 1fr;
+    }
+
     .preceptor {
         max-width: 320px;
         margin-left: auto;
@@ -351,48 +356,44 @@ body {
 
 @media (max-width: 480px) {
     .header {
-        padding: 1.5rem 1rem;
+        padding: 1.5rem 0.4rem;
     }
-    
+
     .header h1 {
         font-size: 1.1rem;
+        line-height: 1.2;
     }
-    
-    .logo {
-        max-width: 150px;
+
+    .logo-container {
+        gap: 8px;
+        padding: 3px 0;
     }
-    
-    .logo-gc {
-        max-height: 35px;
+    .logo, .logo-gc {
+        max-height: 42px;
+        height: 42px;
+        width: auto;
     }
-    
+
     .mentor-chief .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
-    
+
     .mentor-chief h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
-    
+
     .preceptor {
         padding: 1rem;
         margin-bottom: 1rem;
     }
-    
+
     .preceptor .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 85px;
+        height: 85px;
     }
-    
+
     .schedule-btn {
         padding: 0.6rem 1.2rem;
-    }
-}
-
-/* Ajustes para telas médias */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .preceptors {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas médias */
     }
 }
